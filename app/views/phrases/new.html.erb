@@ -1,0 +1,14 @@
+<%= form_for(@phrase) do |f| %>
+    <h1>Create Phrase</h1>
+    <div class="form-group">
+      <%= f.label :phrase %><br>
+      <%= f.text_field :phrase, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :translation %><br>
+      <%= f.text_field :translation, :class => 'form-control' %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Submit', :class => 'btn btn-primary'%>
+    </div>
+<% end %>
