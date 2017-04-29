@@ -9,11 +9,7 @@
   </tr>
 
   <% @phrases.each do |phrase| %>
-      <tr>
-        <td><%= phrase.id %></td>
-        <td><%= phrase.phrase %></td>
-        <td><%= phrase.translation %></td>
-      </tr>
+      <%= render phrase %>
   <% end %>
 
 </table>
