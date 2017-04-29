@@ -1,0 +1,15 @@
+h1 Listing phrases
+
+table.table
+  tr
+    th Id
+    th Phrase
+    th Translation
+    th Categoty
+
+  - @phrases.each do |phrase|
+    = render phrase
+
+
+.text-center
+  = will_paginate @phrases, renderer: BootstrapPagination::Rails

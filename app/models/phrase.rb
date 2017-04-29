@@ -10,4 +10,5 @@ class Phrase < ActiveRecord::Base
             }
 
   enum category: %w(Actions Time Productivity Apologies)
+
 end
