@@ -29,6 +29,14 @@ gem 'will_paginate-bootstrap'
 # Provide simple writing views
 gem 'slim-rails'
 
+# Device
+gem 'devise'
+
+
+gem 'rails_layout'
+
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

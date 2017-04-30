@@ -1,0 +1,16 @@
+h1 Listing users
+
+table.table
+  tr
+    th Id
+    th Username
+    th Email
+    th Created At
+    th Updated At
+
+  - @users.each do |user|
+    = render user
+
+
+.text-center
+  = will_paginate @users, renderer: BootstrapPagination::Rails
