@@ -2,3 +2,16 @@
   .row
     .col-md-12
       h1 Username: #{@user.username}
+
+      h3 User Phrases
+      table.table
+        tr
+          th Id
+          th Phrase
+          th Translation
+          th Category
+          - if @user == current_user
+            th Actions
+
+        - @phrases.each do |phrase|
+          = render phrase, author: false
