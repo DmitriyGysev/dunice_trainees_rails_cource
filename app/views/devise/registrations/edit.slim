@@ -1,0 +1,22 @@
+.container-fluid
+  .row
+    .col-md-6.col-md-offset-3
+      h2
+        ' Edit
+        = resource.username
+
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
+
+        .form-group
+          = f.label :username
+          br
+          = f.text_field :username, autofocus: true, :class => 'form-control'
+
+        .form-group
+          = f.label :email
+          br
+          = f.email_field :email, autofocus: true, :class => 'form-control'
+
+        .actions
+          = f.submit "Update", :class => 'btn btn-primary'
