@@ -5,11 +5,14 @@ table.table
     th Id
     th Phrase
     th Translation
-    th Categoty
+    th Category
+    th Author
 
   - @phrases.each do |phrase|
-    = render phrase
+    = render phrase, author: true
 
 
 .text-center
   = will_paginate @phrases, renderer: BootstrapPagination::Rails
+
+= link_to 'Add new phrase', new_phrase_path
