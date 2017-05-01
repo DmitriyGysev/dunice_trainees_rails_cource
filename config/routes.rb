@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   root to: 'phrases#index', as: :root
 
   resources :phrases do
-    resources :examples, only: [:create, :destroy]
+    member do
+      post :vote
+    end
+    resources :examples, only: [:create, :destroy] do
+      post :vote
+    end
   end
 
   resources :users, only: [:show, :index]

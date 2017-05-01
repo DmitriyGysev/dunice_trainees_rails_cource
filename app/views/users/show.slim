@@ -4,7 +4,7 @@
       h1 Username: #{@user.username}
 
       h3 User Phrases
-      table.table
+      table.table.table-striped
         tr
           th Id
           th Phrase
@@ -12,6 +12,6 @@
           th Category
           - if @user == current_user
             th Actions
-
+          th Votes
         - @phrases.each do |phrase|
           = render phrase, author: false
