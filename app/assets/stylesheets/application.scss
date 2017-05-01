@@ -7,15 +7,11 @@
 .alert{
   color: white;
   margin-top: 20px;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.63);
 }
 
 .alert-notice {
-  background-color: green;
-}
-
-.alert-danger {
-  background-color: red;
+  background-color: #00b500;
 }
 
 .field_with_errors{
