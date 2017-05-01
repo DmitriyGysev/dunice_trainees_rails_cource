@@ -1,0 +1,7 @@
+h1 #{current_user.username} Notifications
+
+.container-fluid.m-t-l
+  .row
+    .col-md-9.col-md-offset-1
+      - @notifications.each do |notification|
+        = render 'notifications/notification', notification: notification

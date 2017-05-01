@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
 
     if instance.vote_registered?
       instance.set_carma(params[:vote], current_user)
+      message = params[:vote] == 'up' ? 'Liked your' : 'Disliked your'
+      instance.create_activity key: message, owner: current_user, recipient: instance.user
       flash[:notice] = 'Thanks for your vote!'
     else
       flash[:danger] = 'You\'ve already voted that post!'
