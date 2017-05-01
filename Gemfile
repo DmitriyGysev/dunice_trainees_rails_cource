@@ -29,6 +29,9 @@ gem 'will_paginate-bootstrap'
 # Provide simple writing views
 gem 'slim-rails'
 
+# Provide customization url
+gem 'friendly_id', '~> 5.1.0'
+
 # Device
 gem 'devise'
 

@@ -1,7 +1,14 @@
 class Phrase < ActiveRecord::Base
+  include SharedMethods
+  extend FriendlyId
+
   CATEGORIES = [['Actions', 0], ['Time', 1], ['Productivity', 2], ['Apologies', 3], ['Common', 4]]
 
   belongs_to :user
+  has_many   :examples, dependent: :destroy
+  accepts_nested_attributes_for :examples, allow_destroy: true
+
+  friendly_id :phrase, use: :slugged
 
   validates :translation, :phrase, presence: true
   validates :phrase, uniqueness: true
@@ -13,8 +20,6 @@ class Phrase < ActiveRecord::Base
 
   enum category: %w(Actions Time Productivity Apologies)
 
-  def author?(user)
-    self.user == user
-  end
+
 
 end

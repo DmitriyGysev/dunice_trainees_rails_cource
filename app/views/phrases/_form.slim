@@ -14,4 +14,12 @@
     br
     = f.select :category, Phrase::CATEGORIES, {}, { :class => 'form-control' }
 
+  - if @phrase.id.nil?
+    = f.fields_for :examples do |example|
+      .form-group
+        = example.label :example
+        br
+        = example.text_field :example, :class => 'form-control'
+        = example.hidden_field :user_id, :class => 'form-control'
+
   = f.submit 'Submit', :class => 'btn btn-primary'

@@ -1,6 +1,6 @@
 tr
   td = phrase.id
-  td = phrase.phrase
+  td = link_to phrase.phrase, phrase_path(phrase)
   td = phrase.translation
   td = phrase.category
   - if author
