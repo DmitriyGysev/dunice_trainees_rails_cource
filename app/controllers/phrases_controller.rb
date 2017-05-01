@@ -1,13 +1,20 @@
 class PhrasesController < ApplicationController
-  before_action :set_phrase!, only: [:edit, :update, :destroy]
+  before_action :set_phrase!, only: [:edit, :update, :destroy, :show]
   before_filter :check_user!, only: [:edit, :update, :destroy]
+  before_filter :check_user_before_example_deletion!, only: [:delete_example]
 
   def index
     @phrases = Phrase.includes(:user).paginate(:page => params[:page])
   end
 
   def new
-    @phrase = Phrase.new()
+    @phrase = Phrase.new
+    @phrase.examples.build(:user_id => current_user.id)
+  end
+
+  def show
+    @examples = @phrase.examples.includes(:user).paginate(:page => params[:page])
+    @example = @phrase.examples.build(:user_id => current_user.id)
   end
 
   def edit
@@ -40,14 +47,24 @@ class PhrasesController < ApplicationController
     redirect_to user_path(@phrase.user)
   end
 
+  def create_example
+    @example = @phrase.examples.new(example_params)
+    if @example.save
+      flash[:notice] = 'Example has been created!'
+    else
+      flash[:danger] = @example.errors.full_messages.to_sentence
+    end
+    redirect_to phrase_path
+  end
+
   private
 
   def phrase_params
-    params.require(:phrase).permit(:phrase, :translation)
+    params.require(:phrase).permit(:phrase, :translation, examples_attributes: [ :example, :user_id, :_destroy ])
   end
 
   def set_phrase!
-    @phrase = Phrase.find_by(id: params[:id])
+    @phrase = Phrase.friendly.find(params[:id])
   end
 
   def check_user!
@@ -56,4 +73,5 @@ class PhrasesController < ApplicationController
       redirect_to(:back)
     end
   end
+
 end

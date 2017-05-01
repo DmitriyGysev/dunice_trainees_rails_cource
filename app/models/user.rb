@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :phrases
+  has_many :examples
 
   validates :username, presence: true
   validates :username, uniqueness: true

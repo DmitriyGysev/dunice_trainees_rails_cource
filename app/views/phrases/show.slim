@@ -1,0 +1,39 @@
+h1 Phrase #{@phrase.phrase}
+.container-fluid
+  .row
+    .col-md-6
+      h4 Phrase: #{@phrase.phrase}
+      h4 Translation: #{@phrase.translation}
+      h4 Category: #{@phrase.category}
+
+    .col-md-6
+      h4 Author: #{@phrase.user.username}
+      h4 Created At: #{date_formatter @phrase.created_at}
+      h4 Updated At: #{date_formatter @phrase.updated_at}
+
+  .row
+    .col_md_12.m-t-l
+      = form_for @example, :url => phrase_examples_path(@phrase) do |f|
+        .form-group
+          = f.label :example
+          br
+          = f.text_field :example, :class => 'form-control'
+          = f.hidden_field :user_id, :class => 'form-control'
+
+        = f.submit 'Create new Example', :class => 'btn btn-primary'
+  .row
+    .col_md_12.m-t-l
+      h2 Examples:
+
+      table.table
+        tr
+          th Example
+          th Author
+          th Created At
+
+        - @examples.each do |example|
+          = render example
+
+
+      .text-center
+        = will_paginate @examples, renderer: BootstrapPagination::Rails
