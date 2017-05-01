@@ -11,6 +11,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :notifications, only: :index do
+    collection do
+      put :read_all
+    end
+  end
+
   resources :users, only: [:show, :index]
   get 'static_pages/hello'
 

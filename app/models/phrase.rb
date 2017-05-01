@@ -1,5 +1,6 @@
 class Phrase < ActiveRecord::Base
   include SharedMethods
+  include PublicActivity::Model
   extend FriendlyId
 
   CATEGORIES = [['Actions', 0], ['Time', 1], ['Productivity', 2], ['Apologies', 3], ['Common', 4]]

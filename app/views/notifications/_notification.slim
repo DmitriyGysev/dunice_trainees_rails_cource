@@ -1,0 +1,17 @@
+.notification
+  = readed_circle(notification)
+  = link_to notification.owner.username, user_path(notification.owner)
+  ' &nbsp;
+  = notification.key
+  ' &nbsp;
+  = notification.trackable_type
+  ' &nbsp;
+  - if notification.trackable_type == 'Example'
+    = link_to "#{notification.trackable.example} ", phrase_path(notification.trackable.phrase)
+  - else
+    = link_to "#{notification.trackable.phrase} ", phrase_path(notification.trackable)
+  span.notification-date
+    = date_formatter notification.created_at
+
+
+
