@@ -25,11 +25,13 @@ h1 Phrase #{@phrase.phrase}
     .col_md_12.m-t-l
       h2 Examples:
 
-      table.table
+      table.table.table-striped
         tr
           th Example
           th Author
           th Created At
+          th Votes
+          th Actions
 
         - @examples.each do |example|
           = render example

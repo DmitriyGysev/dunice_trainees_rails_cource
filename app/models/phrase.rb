@@ -9,6 +9,7 @@ class Phrase < ActiveRecord::Base
   accepts_nested_attributes_for :examples, allow_destroy: true
 
   friendly_id :phrase, use: :slugged
+  acts_as_votable
 
   validates :translation, :phrase, presence: true
   validates :phrase, uniqueness: true

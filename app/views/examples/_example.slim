@@ -2,5 +2,16 @@ tr
   td = example.example
   td = example.user.username
   td = date_formatter example.created_at
-  - if show_example_delete_link? example
-    td = link_to 'delete', phrase_example_path(example.phrase, example), class: 'delete_phrase', method: :delete
+  td
+    = link_to phrase_example_vote_path(example.phrase, example, vote: 'up'), method: :post do
+      div
+        span.glyphicon.glyphicon-chevron-up.upvote
+    | #{ example.get_likes.size - example.get_dislikes.size }
+    = link_to phrase_example_vote_path(example.phrase, example, vote: 'down'), method: :post do
+      div
+        span.glyphicon.glyphicon-chevron-down.downvote
+  td
+    - if show_example_delete_link? example
+      = link_to 'delete', phrase_example_path(example.phrase, example), class: 'delete_phrase', method: :delete
+    - else
+      -

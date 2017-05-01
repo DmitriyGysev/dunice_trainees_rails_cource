@@ -1,12 +1,13 @@
 h1 Listing users
 
-table.table
+table.table.table-striped
   tr
     th Id
     th Username
     th Email
     th Created At
     th Updated At
+    th Carma
 
   - @users.each do |user|
     = render user

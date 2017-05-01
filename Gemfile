@@ -32,6 +32,9 @@ gem 'slim-rails'
 # Provide customization url
 gem 'friendly_id', '~> 5.1.0'
 
+# Likes for phrases and examples
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Device
 gem 'devise'
 

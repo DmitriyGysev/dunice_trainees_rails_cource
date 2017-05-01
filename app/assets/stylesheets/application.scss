@@ -21,4 +21,15 @@
   color: red;
   input {  border-color: red }
 }
+
 .m-t-l { margin-top: 30px }
+
+.table {
+  th, td { text-align: center; }
+  td {
+    vertical-align: middle !important;
+    font-size: 15px;
+  }
+  .upvote{ color: green; }
+  .downvote{ color: red }
+}
