@@ -1,4 +1,5 @@
 class PhrasesController < ApplicationController
+  before_filter :normalize_params, only: [:edit, :create]
   before_action :set_phrase!, only: [:edit, :update, :destroy, :show, :vote]
   before_filter :check_user!, only: [:edit, :update, :destroy]
   before_filter :check_user_before_example_deletion!, only: [:delete_example]
@@ -64,8 +65,12 @@ class PhrasesController < ApplicationController
 
   private
 
+  def normalize_params
+    params[:phrase][:category] = params[:phrase][:category].to_i
+  end
+
   def phrase_params
-    params.require(:phrase).permit(:phrase, :translation, examples_attributes: [ :example, :user_id, :_destroy ])
+    params.require(:phrase).permit(:phrase, :category, :translation, examples_attributes: [ :example, :user_id, :_destroy ])
   end
 
   def set_phrase!
