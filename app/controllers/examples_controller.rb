@@ -34,7 +34,7 @@ class ExamplesController < ApplicationController
   end
 
   def set_example!
-    @example = @phrase.examples.find_by(id: params[:example_id])
+    @example = @phrase.examples.find_by(id: params[:id])
   end
 
 end
