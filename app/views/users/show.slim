@@ -15,3 +15,5 @@
           th Votes
         - @phrases.each do |phrase|
           = render phrase, author: false
+
+      = link_to 'Add new phrase', new_phrase_path
