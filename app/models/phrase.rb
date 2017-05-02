@@ -4,6 +4,7 @@ class Phrase < ActiveRecord::Base
   extend FriendlyId
 
   CATEGORIES = [['Actions', 0], ['Time', 1], ['Productivity', 2], ['Apologies', 3], ['Common', 4]]
+  has_many :activities, as: :trackable, class_name: 'PublicActivity::Activity', dependent: :destroy
 
   belongs_to :user
   has_many   :examples, dependent: :destroy
