@@ -1,0 +1,5 @@
+- if @chatroom.messages.any?
+  #messages
+    = render partial: 'messages/message', collection: @chatroom.messages
+
+= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom}
