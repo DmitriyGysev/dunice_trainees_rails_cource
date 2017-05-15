@@ -101,6 +101,7 @@ GEM
       activerecord (>= 3.0)
       i18n (>= 0.5.0)
       railties (>= 3.0.0)
+    puma (3.8.2)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -130,6 +131,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    redis (3.3.3)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -198,8 +200,10 @@ DEPENDENCIES
   jquery-rails
   pg (~> 0.15)
   public_activity
+  puma
   rails (= 5.0.2)
   rails_layout
+  redis (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slim-rails
@@ -209,9 +213,6 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate
   will_paginate-bootstrap
-
-RUBY VERSION
-   ruby 2.4.0p0
 
 BUNDLED WITH
    1.14.6
