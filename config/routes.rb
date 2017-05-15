@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
+
   devise_for :users, :controllers => { registrations: 'user/registrations' }
+
   root to: 'phrases#index', as: :root
+  get 'static_pages/hello'=> 'static_pages#hello'
 
   resources :phrases do
     member do
@@ -18,6 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
-  get 'static_pages/hello'
+
+  resources :chatrooms
+
+  resources :messages
+
 
 end

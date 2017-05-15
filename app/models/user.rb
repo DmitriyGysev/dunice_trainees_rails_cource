@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :phrases
   has_many :examples
+  has_many :messages
+  has_many :chatrooms, through: :messages
+
 
   validates :username, presence: true
   validates :username, uniqueness: true

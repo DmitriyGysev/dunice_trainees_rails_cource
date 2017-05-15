@@ -5,3 +5,5 @@ tr
   td = date_formatter user.created_at
   td = date_formatter user.updated_at
   td = user.carma
+  - if user != current_user
+    td =link_to 'Chat now', new_chatroom_path({recipient_id: user.id})
