@@ -3,7 +3,7 @@ ruby "2.4.0"
 
 gem 'rails', '5.0.2'
 gem 'pg', '~> 0.15'
-gem 'puma'
+# gem 'puma'
 # gem 'redis', '~> 3.0'
 
 # Use SCSS for stylesheets
