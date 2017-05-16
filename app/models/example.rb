@@ -8,6 +8,6 @@ class Example < ActiveRecord::Base
 
   acts_as_votable
 
-  validates :example, presence: true
+  validates :example, :phrase_id, :user_id, presence: true
   validates_uniqueness_of :example, scope: :phrase_id, :message=>"has already been used!"
 end
