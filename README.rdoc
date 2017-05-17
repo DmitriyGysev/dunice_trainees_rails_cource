@@ -1,3 +1,3 @@
 == README
 
-[![Build Status](https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource.svg?branch=master)](https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource)
+[![Build Status](https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource.svg?branch=master)]
