@@ -1,2 +1,2 @@
-# rspec-rails [![Build Status](https://secure.travis-ci.org/rspec/rspec-rails.svg?branch=master)](http://travis-ci.org/rspec/rspec-rails) [![Code Climate](https://img.shields.io/codeclimate/github/rspec/rspec-rails.svg)](https://codeclimate.com/github/rspec/rspec-rails)
-**rspec-rails** is a testing framework for Rails 3.x, 4.x and 5.0.
+== Dunice Trainees Rails Cource {<img src="https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource]
+
