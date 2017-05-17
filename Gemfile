@@ -46,6 +46,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
+  gem 'rails-controller-testing'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'database_cleaner'
