@@ -1,3 +1,3 @@
-== README
+== Dunice Trainees Rails Cource
 
 [![Build Status](https://travis-ci.org/DmitriyGysev/dunice_trainees_rails_cource.svg?branch=master)]
