@@ -43,8 +43,14 @@ gem 'rails_layout'
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :development do

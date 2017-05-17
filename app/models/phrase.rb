@@ -13,7 +13,7 @@ class Phrase < ActiveRecord::Base
   friendly_id :phrase, use: :slugged
   acts_as_votable
 
-  validates :translation, :phrase, presence: true
+  validates :translation, :phrase, :user_id, presence: true
   validates :phrase, uniqueness: true
   validates :category,
             inclusion: {
