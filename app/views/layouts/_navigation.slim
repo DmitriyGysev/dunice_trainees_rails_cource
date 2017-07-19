@@ -15,7 +15,7 @@ header.navbar.navbar-inverse
             ul.dropdown-menu
               li = link_to "View Profile", user_path(current_user)
               li = link_to "Edit Profile", edit_user_registration_path
-              li = link_to notifications_path do
+              li.ki = link_to notifications_path do
                 - if current_user.has_new_notifications?
                   span.glyphicon.glyphicon-heart.navigation-notification-item
                 ' Notifications
